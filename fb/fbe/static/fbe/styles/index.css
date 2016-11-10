@@ -47,6 +47,9 @@ src:url(../fonts/冬青黑体.otf);
 	width: 67px;
 	height: 45px;
 }
+.btn_deco.hover {
+	visibility: hidden;
+}
 /*index*/
 .container {
 	font-size:62.5%;

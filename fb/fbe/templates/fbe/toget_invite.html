@@ -37,8 +37,10 @@
 		<div class="btn_box dark">
 			<a class="btn btn1" onclick="openEmailTip()" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
 				<img class="btn_deco l" src="{% static 'fbe/images/deco1b.png' %}">
+				<img class="btn_deco l hover" src="{% static 'fbe/images/deco1b_h.png' %}">
 				<span class="btn_word font2">赴约！</span>
 				<img class="btn_deco r" src="{% static 'fbe/images/deco1b.png' %}">
+				<img class="btn_deco r hover" src="{% static 'fbe/images/deco1b_h.png' %}">
 			</a>
 			<a class="btn btn2" onclick="goToget('{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}')"><!-- to toget_s&&&& to toget_i -->
 				<span class="btn_word font2">不理ta继续捡</span>
@@ -78,8 +80,10 @@
 					</p>
 				</div>
 				<label class="btn btn1" for="submitbtn" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
+					<img class="btn_deco l hover" src="{% static 'fbe/images/deco1b_h.png' %}">
 					<img class="btn_deco l" src="{% static 'fbe/images/deco1b.png' %}">
 					<span class="btn_word  font2">确认赴约！</span>
+					<img class="btn_deco r hover" src="{% static 'fbe/images/deco1b_h.png' %}">
 					<img class="btn_deco r" src="{% static 'fbe/images/deco1b.png' %}">
 				</label>
 				<p class="word alert font2">请填写邮箱哦</p>

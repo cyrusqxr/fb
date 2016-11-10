@@ -28,13 +28,17 @@
 		<img class="header_img" src="{% static 'fbe/images/index_header.png' %}">
 		<div class="btn_box">
 			<a class="btn btn1" onclick="{%if sex %}goToget('{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}'){%else%}openSexTip(){%endif%}" onmouseover="changeIndexTipBtn($(this))" onmouseout="backIndexTipBtn($(this))"><!-- 可能要判断第一次什么的，反正现在不用，如果要的话，就做判断，第一次就开标签，不是第一次就调用随机函数 -->
+				<img class="btn_deco l hover" src="{% static 'fbe/images/deco1b.png' %}">
 				<img class="btn_deco l" src="{% static 'fbe/images/deco1.png' %}">
 				<span class="btn_word font2">捡瓶子</span>
+				<img class="btn_deco r hover" src="{% static 'fbe/images/deco1b.png' %}">
 				<img class="btn_deco r" src="{% static 'fbe/images/deco1.png' %}">
 			</a>
 			<a class="btn btn2" href="{%url '_throw' %}" onmouseover="changeIndexBottleBtn($(this))" onmouseout="backIndexBottleBtn($(this))"><!-- to tothrow -->
+				<img class="btn_deco l hover" src="{% static 'fbe/images/deco2b_l.png' %}">
 				<img class="btn_deco l" src="{% static 'fbe/images/deco2_l.png' %}">
 				<span class="btn_word font2">扔瓶子</span>
+				<img class="btn_deco r hover" src="{% static 'fbe/images/deco2b_r.png' %}">
 				<img class="btn_deco r" src="{% static 'fbe/images/deco2_r.png' %}">
 			</a>
 		</div>
@@ -75,8 +79,10 @@
 
 			<label class="btn btn1" for="submitbtn" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
 				<img class="btn_deco l" src="{% static 'fbe/images/deco1b.png' %}">
+				<img class="btn_deco l hover" src="{% static 'fbe/images/deco1b_h.png' %}">
 				<span class="btn_word font2">捡瓶子</span>
 				<img class="btn_deco r" src="{% static 'fbe/images/deco1b.png' %}">
+				<img class="btn_deco r hover" src="{% static 'fbe/images/deco1b_h.png' %}">
 			</label>
 			<p class="word alert font2">请填写性别哦</p>
 			<input class="formbtn submit" id="submitbtn" type="button" value="提交" onclick="checkSex('{%url 'pick' %}','{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}')"><!-- to toget_s&&&& to toget_i -->

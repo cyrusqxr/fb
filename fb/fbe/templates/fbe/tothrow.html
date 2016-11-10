@@ -91,7 +91,7 @@
 			<div class="unfix sentence">
 				<div class="quest">
 					<p class="font1">写上你的一句话吧：</p>
-					<textarea class="font2" name="type0">哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔</textarea>
+					<textarea class="font2" name="type0"></textarea>
 				</div>
 			</div>
 
@@ -109,15 +109,17 @@
 				</div>
 				<div class="quest">
 					<p class="font1">写上你的邀约（可以附上一个独特的接头暗号哦）：</p>
-					<textarea class="font2" name="type1">哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔</textarea>
+					<textarea class="font2" name="type1"></textarea>
 				</div>
 			</div>
 
 			<div class="btn_box dark">
 				<label class="btn" for="submitbtn" onmouseover="changeDarkBottleBtn($(this))" onmouseout="backDarkBottleBtn($(this))">
 					<img class="btn_deco l" src="{% static 'fbe/images/deco2b_l.png' %}">
+					<img class="btn_deco l hover" src="{% static 'fbe/images/deco2b_l_h.png' %}">
 					<span class="btn_word font2">扔出去！</span>
 					<img class="btn_deco r" src="{% static 'fbe/images/deco2b_r.png' %}">
+					<img class="btn_deco r hover" src="{% static 'fbe/images/deco2b_r_h.png' %}">
 				</label>
 				<input class="formbtn submit hidden" id="submitbtn" type="button" value="提交" onclick="checkThrow('{%url 'Throw' %}')">
 			</div>

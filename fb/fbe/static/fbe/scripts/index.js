@@ -1,46 +1,70 @@
 function changeIndexTipBtn(obj) {
 	obj.css({"border":"2px #08423a solid"});
 	obj.children(".btn_word").css({"color":"#08423a"});
-	obj.children(".btn_deco").attr("src","images/deco1b.png");
+	obj.children(".btn_deco").css({"visibility":"hidden"});
+	obj.children(".btn_deco.hover").css({"visibility":"visible"});
+	/*obj.children(".btn_deco").attr("src","images/deco1b.png");*/
 }
 function backIndexTipBtn (obj) {
 	obj.css({"border":"2px white solid"});
 	obj.children(".btn_word").css({"color":"white"});
-	obj.children(".btn_deco").attr("src","images/deco1.png");
+	obj.children(".btn_deco").css({"visibility":"visible"});
+	obj.children(".btn_deco.hover").css({"visibility":"hidden"});
+	/*obj.children(".btn_deco").attr("src","images/deco1.png");*/
 }
 function changeIndexBottleBtn(obj) {
 	obj.css({"border":"2px #08423a solid"});
 	obj.children(".btn_word").css({"color":"#08423a"});
-	obj.children(".btn_deco.l").attr("src","images/deco2b_l.png");
-	obj.children(".btn_deco.r").attr("src","images/deco2b_r.png");
+	obj.children(".btn_deco.l").css({"visibility":"hidden"});
+	obj.children(".btn_deco.l.hover").css({"visibility":"visible"});
+	obj.children(".btn_deco.r").css({"visibility":"hidden"});
+	obj.children(".btn_deco.r.hover").css({"visibility":"visible"});
+	/*obj.children(".btn_deco.l").attr("src","images/deco2b_l.png");
+	obj.children(".btn_deco.r").attr("src","images/deco2b_r.png");*/
 }
 function backIndexBottleBtn (obj) {
 	obj.css({"border":"2px white solid"});
 	obj.children(".btn_word").css({"color":"white"});
-	obj.children(".btn_deco.l").attr("src","images/deco2_l.png");
-	obj.children(".btn_deco.r").attr("src","images/deco2_r.png");
+	obj.children(".btn_deco.l").css({"visibility":"visible"});
+	obj.children(".btn_deco.l.hover").css({"visibility":"hidden"});
+	obj.children(".btn_deco.r").css({"visibility":"visible"});
+	obj.children(".btn_deco.r.hover").css({"visibility":"hidden"});
+	/*obj.children(".btn_deco.l").attr("src","images/deco2_l.png");
+	obj.children(".btn_deco.r").attr("src","images/deco2_r.png");*/
 }
 function changeDarkTipBtn(obj) {
 	obj.css({"border":"2px #04cbc5 solid"});
 	obj.children(".btn_word").css({"color":"#04cbc5"});
-	obj.children(".btn_deco").attr("src","images/deco1b_h.png");
+	obj.children(".btn_deco").css({"visibility":"hidden"});
+	obj.children(".btn_deco.hover").css({"visibility":"visible"});
+	/*obj.children(".btn_deco").attr("src","images/deco1b_h.png");*/
 }
 function backDarkTipBtn (obj) {
 	obj.css({"border":"2px #08423a solid"});
 	obj.children(".btn_word").css({"color":"#08423a"});
-	obj.children(".btn_deco").attr("src","images/deco1b.png");
+	obj.children(".btn_deco").css({"visibility":"visible"});
+	obj.children(".btn_deco.hover").css({"visibility":"hidden"});
+	/*obj.children(".btn_deco").attr("src","images/deco1b.png");*/
 }
 function changeDarkBottleBtn (obj) {
 	obj.css({"border":"2px #04cbc5 solid"});
 	obj.children(".btn_word").css({"color":"#04cbc5"});
-	obj.children(".btn_deco.l").attr("src","images/deco2b_l_h.png");
-	obj.children(".btn_deco.r").attr("src","images/deco2b_r_h.png");
+	obj.children(".btn_deco.l").css({"visibility":"hidden"});
+	obj.children(".btn_deco.l.hover").css({"visibility":"visible"});
+	obj.children(".btn_deco.r").css({"visibility":"hidden"});
+	obj.children(".btn_deco.r.hover").css({"visibility":"visible"});
+/*	obj.children(".btn_deco.l").attr("src","images/deco2b_l_h.png");
+	obj.children(".btn_deco.r").attr("src","images/deco2b_r_h.png");*/
 }
 function backDarkBottleBtn (obj) {
 	obj.css({"border":"2px #08423a solid"});
 	obj.children(".btn_word").css({"color":"#08423a"});
-	obj.children(".btn_deco.l").attr("src","images/deco2b_l.png");
-	obj.children(".btn_deco.r").attr("src","images/deco2b_r.png");
+	obj.children(".btn_deco.l").css({"visibility":"visible"});
+	obj.children(".btn_deco.l.hover").css({"visibility":"hidden"});
+	obj.children(".btn_deco.r").css({"visibility":"visible"});
+	obj.children(".btn_deco.r.hover").css({"visibility":"hidden"});
+	/*obj.children(".btn_deco.l").attr("src","images/deco2b_l.png");
+	obj.children(".btn_deco.r").attr("src","images/deco2b_r.png");*/
 }
 function closeTip () {
 	$(".tip").css({"visibility":"hidden"});
@@ -158,7 +182,7 @@ function checkThrow(theUrl) {
 					$(".tip.success.A").css({"visibility":"visible"});
 				};
 			} else {
-				$(".tip.fail").children(".word").text("抱歉，提交失败了，请重新提交");
+				$(".tip.fail").children(".word").text("抱歉，提交失败了，请重新提交。错误原因可能有：邮箱错误；发了不止一次；网络迟缓");
 				$(".tip.fail").css({"visibility":"visible"});
 			};
 		});
@@ -194,7 +218,7 @@ function checkEmail(theUrl) {
 		$(".word.alert").css({"visibility":"hidden"});
 		$.post(theUrl,$("#theform").serialize(),function(code,status){
 			if (code.error != '0') {
-				$(".tip.fail").children(".word").text("抱歉，提交失败了，请重新提交");
+				$(".tip.fail").children(".word").text("抱歉，提交失败了，请重新提交。错误原因可能有：邮箱错误；发了不止一次；网络迟缓");
 				$(".tip.fail").css({"visibility":"visible"});
 			} else{
 				location.href = theUrl;
