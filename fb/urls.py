@@ -18,7 +18,7 @@ from django.contrib import admin
 from fbe import views
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
-	url(r'^$',views.index, name='index'), 
+	url(r'^fb/$',views.index, name='index'), 
 	url(r'^fbe/invitation/$',views.Invitation,name='invitation'), 
 	url(r'^fbe/pick/$',views.pick,name='pick'),
 	url(r'^fbe/return_email/$',views.return_email,name='return_email'), 
