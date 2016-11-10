@@ -1,0 +1,222 @@
+﻿body {
+    margin: 0;
+    background: #f6f3ec;
+    font-family: 'Microsoft Yahei';
+}
+img {
+    border: none;
+}
+.header-wrap {
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;
+    background: #9c0c13;
+    z-index: 1000;
+}
+.header {
+    max-width: 1000px;
+    min-width: 850px;
+    height: 59px;
+    margin: 0 auto;
+    background: #9c0c13;
+    font-family: 'Microsoft Yahei', SimHei;
+}
+#logo {
+    float: left;
+    margin-top: 4px;
+}
+.nav {
+    float: right;
+    width: 600px;
+    height: 100%;
+    background: #9c0c13;
+    overflow: hidden;
+}
+.nav a {
+    float: left;
+    width: 25%;
+    height: 100%;
+    line-height: 59px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+.nav:hover .on {
+    background: #9c0c13
+}
+.nav a.on,
+.nav a.on:hover,
+.nav a:hover {
+    background: #fae002;
+}
+
+.slider {
+    margin: 59px auto 0;
+    position: relative;
+    min-width: 1015px;
+    max-width: 1240px;
+}
+.slider-viewport {
+    position: relative;
+    overflow: hidden;
+    width: 1015px;
+    height: 372px;
+    margin: 0 auto;
+}
+.slider-scroller {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.slider-item {
+    position: relative;
+    float: left;
+    height: 372px;
+    overflow: hidden;
+}
+.slider-item img {
+    display: block;
+    width: 100%;
+}
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    width: 65px;
+    height: 115px;
+    background: rgba(255,255,255,0);
+    background: url(../images/transparent.png) \9;
+    text-align: center;
+    cursor: pointer;
+    line-height: 115px;
+    opacity: .8;
+    font-family: SimSun;
+}
+.slider-arrow:after {
+    font-style: normal;
+    color: #fff;
+    font-size: 70px;
+}
+#slider-prev {
+    left: 0;
+}
+#slider-prev:after {
+    content: '<';
+}
+#slider-next {
+    right: 0;
+}
+#slider-next:after {
+    content: '>';
+}
+.slider-nav {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+.slider-nav i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: solid 2px #9c0c13;
+    border-radius: 50%;
+    margin: 0 9px;
+    cursor: pointer;
+    /*IE 透明点击bug*/
+    background: rgba(255,255,255,0);
+    background: url(../images/transparent.png) \9;
+}
+.slider-nav i.on {
+    background: #9c0c13;
+}
+.slider-text {
+    position: absolute;
+    width: 300px;
+    padding: 5px 42px;
+    top: 240px; left: 0;
+    background: rgba(90,90,90,.6);
+    color: #fff;
+}
+.slider-text h3 {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.slider-text p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.main {
+    width: 1015px;
+    margin: 30px auto;
+    min-height: 500px;
+}
+.main ul {
+    overflow: hidden;
+    list-style: none;
+    width: 970px;
+    margin: 0 auto;
+    padding: 0;
+}
+.main li {
+    float: left;
+    width: 301px;
+    height: 360px;
+    padding: 5px 10px;
+    border: solid 1px #999;
+}
+.main h3 {
+    font-weight: 400;
+    margin: 14px 0;
+    font-size: 17px;
+    line-height: 20px;
+}
+.main .img-box {
+    width: 100%;
+    height: 191px;
+    overflow: hidden;
+}
+.img-box img {
+    max-width: 100%;
+}
+.main li p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+.main li a {
+    text-decoration: none;
+    color: #999;
+}
+.main li a h3 {
+    color: #000;
+}
+#more {
+    display: block;
+    margin: 50px auto;
+    width: 165px;
+    text-align: center;
+    text-decoration: none;
+    color: #9c0c13;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    border: solid #9c0c13 1px;
+    border-radius: 4px;
+}
+
+.footer {
+    height: 160px;
+    padding: 20px 0;
+    min-width: 1000px;
+}
+.ft-copy {
+    margin-top: 50px;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Microsoft Yahei';
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>小线漂流瓶_捡瓶子</title>
+	<link rel="stylesheet" href="{% static 'fbe/styles/index.css' %}">
+	<link rel="stylesheet" href="{% static 'fbe/styles/toget.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<img class="bg" src="{% static 'fbe/images/toget_bg.png' %}">
+	<div class="container">
+		<div class="top">
+			<a class="close" href="{%url 'index' %}"><img src="{% static 'fbe/images/close2.png' %}"></a><!-- to index -->
+			<img class="top_deco" src="{% static 'fbe/images/deco3.png' %}">
+		</div>
+
+		<div class="content">
+			<p class="title font1">某<span id="obj_sex">性别</span>孩的邀约</p>
+			<p class="word invite font2" id="obj_content">
+				某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约
+			</p>
+		</div>
+
+		<div class="btn_box dark">
+			<a class="btn btn1" onclick="openEmailTip()" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
+				<img class="btn_deco l" src="{% static 'fbe/images/deco1b.png' %}">
+				<span class="btn_word font2">赴约！</span>
+				<img class="btn_deco r" src="{% static 'fbe/images/deco1b.png' %}">
+			</a>
+			<a class="btn btn2" onclick="goToget('{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}')"><!-- to toget_s&&&& to toget_i -->
+				<span class="btn_word font2">不理ta继续捡</span>
+			</a>
+			<p class="word font2">答应赴约可与对方用邮箱联系</p>
+		</div>
+
+		<div class="buttom invite">
+			<div class="logo_box"><img class="logo" src="{% static 'fbe/images/logo.png' %}"></div>
+			<!-- <a class="inform_btn" onclick="openInformTip()">
+				<img class="inform_sign" src="images/inform_sign.png">
+				<span>举报</span>
+			</a> -->
+		</div>
+
+		<div class="tip fail">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<h1 class="word font1"></h1>
+			<div class="btn_box dark" onclick="closeTip2()">
+				<a class="btn btn1"><span class="btn_word font2">返回</span></a>
+			</div>
+		</div>
+		<div class="tip email">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<a class="close" onclick="closeTip()"><img src="{% static 'fbe/images/close.png' %}"></a>
+			<h1 class="word font1">
+				先别着急要ta的邮箱<br>
+				写下你的邮箱好让ta联系你
+			</h1>
+			<form class="address form" id="theform" method="post" action="" onsubmit="return checkUserEmail();">
+				<img class="icon" src="{% static 'fbe/images/email_icon.png' %}">
+				<input class="email_input font2" type="text" name="s_email">
+				<div class="words">
+					<p class="word  font2">
+						答应赴约后将发送反馈至ta的邮箱<br>
+						请确认自己可以赴约哟~
+					</p>
+				</div>
+				<label class="btn btn1" for="submitbtn" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
+					<img class="btn_deco l" src="{% static 'fbe/images/deco1b.png' %}">
+					<span class="btn_word  font2">确认赴约！</span>
+					<img class="btn_deco r" src="{% static 'fbe/images/deco1b.png' %}">
+				</label>
+				<p class="word alert font2">请填写邮箱哦</p>
+				<input class="formbtn submit" id="submitbtn" type="button" value="提交" onclick="checkEmail('{%url 'email' %}','http://www.baidu.com')"><!-- to toget_invite_content -->
+				<a class="link font2" onclick="closeTip()">后悔了，返回</a>
+			</form>
+		</div>
+		<img class="tip inform email tip_b" src="{% static 'fbe/images/tip_b_toget.png' %}">
+		<!-- <div class="tip inform">
+			<img class="bg" src="images/tip_bg.png">
+			<a class="close" onclick="closeTip()"><img src="images/close.png"></a>
+			<h1 class="word">
+				填写举报原因
+			</h1>
+			<form class="reason form" id="theform" method="post" action="">
+				<div class="select">
+					<select name="reason">
+						<option value="1">含有违法内容</option>
+						<option value="2">含有不健康内容</option>
+						<option value="3">含有欺诈内容</option>
+						<option value="4">无意义内容</option>
+						<option value="5">其它</option>
+					</select>
+				</div>
+				<p class="word">
+					如发现漂流瓶存在问题我们会尽快处理！谢谢您的配合！
+				</p>
+				<label class="btn btn1" for="submitbtn" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
+					<span class="btn_word">举报</span>
+				</label>
+				<input class="formbtn submit" id="submitbtn" type="submit" value="提交">
+				<a class="link" onclick="closeTip()">不举报，返回</a>
+			</form>
+		</div> -->
+	</div>
+
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+		$(document).ready(loadInfo(1,"{%url 'picked' %}"));/*写发送请求到的url*/
+	</script>
+</body>
+
+</html>

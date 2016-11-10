@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>双11漂流瓶后台管理系统</title>
+	<!--个别特殊的 js (如 用于调试、跳转到低版本浏览器警告页 之类的)-->
+	<link rel="stylesheet" href="{% static 'fbe/styles/index1.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>双11漂流瓶后台管理系统</h1>
+			<div class="login">
+				<a href="/fbe/logout/">退出</a>
+			</div>
+		</div>
+		<table class="content">
+			<tr>
+				<th>id</th>
+				<th>content</th>
+				<th>email</th>
+				<th>accept_email</th>
+				<th>cancel</th>
+			</tr>
+		{% if already %}
+		{% for i in already %}
+			<tr>
+				<td>{{i.id}}</td>
+				<td>{{i.content}}</td>
+				<td>{{i.email}}</td>
+				<td>{{i.accept_email}}</td>
+				<td><a>删除</a></td>
+			</tr>
+		{% endfor %}
+		{% else %}
+		<tr>
+				<td>还没有人玩</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>				
+				<td></td>
+			</tr>
+		{% endif %}
+		</table>
+
+		<table class="content">
+			<tr>
+				<th>id</th>
+				<th>content</th>
+				<th>cancel</th>
+			</tr>
+		{% if already1 %}
+		{% for j in already1 %}
+			<tr>
+				<td>{{j.id}}</td>
+				<td>{{j.content}}</td>
+				<td><a>删除</a></td>
+		{% endfor %}
+		{% else %}
+		<tr>
+				<td>还没有人玩</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>				
+				<td></td>
+			</tr>
+		{% endif %}
+
+
+
+
+		<!-- <div class="page">
+			<div class="left">
+				<a href="">首页</a>
+				<a href="">上一页</a>
+				<a href="">下一页</a>
+				<a href="">末页</a>
+			</div>
+			<div class="right">
+				<span>跳转到</span>
+				<input id="pageJump" type="text">
+				<a class="button_a">GO</a>
+				<span>第</span>
+				<span>1</span>
+				<span>/</span>
+				<span id="pageTotal">3</span>
+				<span>页</span>
+				<p id="pageAlarm">页码输入错误！</p>
+			</div>
+		</div> -->
+		<div class="tip">
+			<p class="tip_word">哦啦啦</p>
+			<button class="tip_btn">确认</button>
+		</div>
+	</div>
+
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei",微软雅黑;
+}
+html {
+	background-color: #DDE4FF;
+}
+.container {
+	width: 100%;
+	max-width: 1000px;
+	padding-top: 60px;
+	margin: 0 auto;
+}
+h1 {
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+	color: #006;
+	padding-bottom: 30px;
+}
+a.button_a {
+	display: inline-block;
+	padding: 5px 15px;
+	background-color: #2864F0;
+	color: white;
+	border: 2px #2864F0 solid;
+	border-radius:10px;
+	-moz-border-radius:10px; /* Old Firefox */
+	text-decoration: none;
+	cursor: pointer;
+}
+a.button_a.present {
+	background-color: #006;
+	border: 2px #006 solid;
+}
+a.button_a:hover {
+	background-color: #006;
+	border: 2px #006 solid;
+	color: white;
+}
+.button {
+	overflow: hidden;
+}
+.button a.button_a {
+	margin-left: 20px;
+	float: left;
+}
+.button .login {
+	float: right;
+}
+.button .login a {
+	margin-left: 10px;
+	color: black;
+	text-decoration: none;
+}
+.button .login a:hover {
+	text-decoration: underline;
+}
+table {
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+}
+th {
+	text-align: left;
+	padding: 8px 5px;
+	background-color: #006;
+	color: white;
+	border-bottom: 3px solid #006;
+}
+td {
+	text-align: left;
+	padding: 5px 5px;
+	border-bottom: 1px solid #006;
+}
+/*.page {
+	overflow: hidden;
+}
+.page a {
+	margin-left: 20px;
+	color: black;
+	text-decoration: none;
+}
+.page a:hover {
+	text-decoration: underline;
+}
+.page>.left {
+	float: left;
+}
+.page>.right {
+	float: right;
+}
+.page>.right input {
+	width: 25px;
+}
+.page>.right a {
+	color: white;
+	font-size: 12px;
+	padding: 0 2px;
+	margin-left: 0;
+	margin-right: 15px;
+	border-radius:5px;
+	-moz-border-radius:5px; 
+}
+.page>.right a:hover {
+	text-decoration: none;
+}
+.page>.right>p {
+	visibility: hidden;
+	padding-left: 20px;
+	font-size: 10px;
+	color: #2864F0;
+}*/
+
+.download {
+	overflow: hidden;
+	padding-top: 20px;
+}
+.download a {
+	float: right;
+}
+
+/*login*/
+/*.login_box {
+	width: 368px;
+	margin: 0 auto;
+}
+.login_box>h1 {
+	color: white;
+	font-size: 37px;
+	font-weight: 500;
+	margin-bottom: 50px;
+	margin-left: 15px;
+}
+.log_text_box {
+	width: 284px;
+	height: 148px;
+	padding-top: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: white;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	border: 1px solid #B7ACAC;
+	color: #74C1B0;
+}
+.log_text_box_up {
+	margin-bottom: 25px;
+}
+.log_text_box>div {
+	width: 264px;
+	height: 22px;
+}
+.log_text_box>div>div {
+	line-height: 22px;
+	height: 22px;
+	display: inline-block;
+}
+.log_text_box .span_hid {
+	visibility: hidden;
+}
+.log_text_box  .text_area {
+	display: inline-block;
+	height: 22px;
+	width: 172px;
+	border: 1px #74C1B0 solid;
+}
+.text_area img {
+	height: 19px;
+	float: right;
+}
+.log_text_box>input {
+	width: 80px;
+	height: 32px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	background-color: #74C1B0;
+	color: white;
+	font-size: 18px;
+	margin-top: 25px;
+	margin-left: 100px;
+	cursor: pointer;
+}
+#alarm_empty {
+	font-size: 10px;
+	visibility: hidden;
+}
+.footer.login {
+	color: white;
+}*/
+.tip {
+	visibility: hidden;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -80px;
+	margin-left: -122px;
+	padding: 0 15px;
+	width: 80%;
+	max-width: 223px;
+	height: 159px;
+	background-color: white;
+	border-radius:4px;
+	-moz-border-radius:4px; /* Old Firefox */
+	box-shadow: 8px 8px 30px #888888;
+}
+.tip_word {
+	font-size: 16px;
+	font-family: "Microsoft YaHei",微软雅黑;
+	text-align: center;
+	margin-top: 60px;
+}
+.tip_btn {
+	width: 58px;
+	height: 32px;
+	position: absolute;
+	right: 8px;
+	bottom: 10px;
+	z-index: 3;
+	background-color: #2864F0;
+	font-size: 12px;
+	font-family: "Microsoft YaHei",微软雅黑;
+	color: white;
+	cursor: pointer;
+}

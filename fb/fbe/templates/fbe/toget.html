@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<!--响应式页面对手机设备的缩放设置
+		这样设置以后手机竖屏宽度大概在310px至360px之间
+		maximum-scale(最大尺寸), minimum-scale(最小尺寸), user-scalable(是否允许缩放) 可根据需要更改
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
+	<title>小线漂流瓶_捡瓶子</title>
+	<link rel="stylesheet" href="{% static 'fbe/styles/index.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<div class="containter">
+		<div class="top">
+			<a class="close" href="{%url 'index' %}">X</a>
+			<img class="top_deco" src="{% static 'fbe/images/deco3.png' %}">
+		</div>
+
+		<div class="content">
+			<p class="title">某女孩的邀约</p>
+			<p class="word">
+				某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约某女孩的邀约
+			</p>
+		</div>
+
+		<div class="btn_box">
+			<a class="btn btn1" href="">
+				<img class="btn_deco" src="{% static 'fbe/images/deco1.png' %}">
+				<span class="btn_word">赴约！</span>
+				<img class="btn_deco" src="{% static 'fbe/images/deco1.png' %}">
+			</a>
+			<a class="btn btn2" href="">
+				<span class="btn_word">不理ta继续捡</span>
+			</a>
+			<p class="word">答应赴约可与对方用邮箱联系</p>
+		</div>
+
+		<div class="buttom">
+			<img class="logo" src="{% static 'fbe/images/logo.png' %}">
+			<a class="inform_btn">
+				<img class="inform_sign" src="{% static 'fbe/images/inform_sign.png' %}">
+				<span>举报</span>
+			</a>
+		</div>
+
+		<div class="tip email">
+			<a class="close" href="{%url 'index' %}">X</a>
+			<h1 class="word">
+				先别着急要她的邮箱<br>
+				写下你的邮箱好让她联系你
+			</h1>
+			<form class="address">
+				<img src="{% static 'fbe/images/b_q4.png' %}">
+				<input type="text" name="address">
+			</form>
+			<div class="words">
+				<p class="word">
+					答应赴约后将发送反馈至ta的邮箱<br>
+					请确认自己可以赴约哟~
+				</p>
+			</div>
+			<!-- <a class="btn btn1" href="">
+				<img class="btn_deco" src="{% static 'fbe/images/deco1.png' %}">
+				<span class="btn_word">捡瓶子</span>
+				<img class="btn_deco" src="{% static 'fbe/images/deco1.png' %}">
+			</a> -->
+		</div>
+		<div class="tip inform">
+			<a class="close" href="{%url 'index' %}">X</a>
+			<h1 class="word">
+				填写举报原因
+			</h1>
+			<form class="reason">
+				<select name="reason">
+					<option value="1">含有违法内容</option>
+					<option value="2">含有不健康内容</option>
+					<option value="3">含有欺诈内容</option>
+					<option value="4">无意义内容</option>
+					<option value="5">其它</option>
+				</select>
+			</form>
+			<p class="word">
+				如发现漂流瓶存在问题我们会尽快处理！谢谢您的配合！
+			</p>
+			<!-- <a class="btn btn1" href="">
+				<img class="btn_deco" src="{% static 'fbe/images/deco1.png' %}">
+				<span class="btn_word">捡瓶子</span>
+				<img class="btn_deco" src="{% static 'fbe/images/deco1.png' %}">
+			</a> -->
+		</div>
+	</div>
+
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+	</script>
+</body>
+
+</html>

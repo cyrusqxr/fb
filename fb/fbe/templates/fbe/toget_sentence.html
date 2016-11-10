@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>小线漂流瓶_捡瓶子</title>
+	<link rel="stylesheet" href="{% static 'fbe/styles/toget.css' %}">
+	<link rel="stylesheet" href="{% static 'fbe/styles/index.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<img class="bg" src="{% static 'fbe/images/toget_bg.png' %}">
+	<div class="container">
+		<div class="top">
+			<a class="close" href="{%url 'index' %}"><img src="{% static 'fbe/images/close2.png' %}"></a><!-- to index -->
+			<img class="top_deco" src="{% static 'fbe/images/deco3.png' %}">
+		</div>
+
+		<div class="content">
+			<p class="title font1">某<span id="obj_sex">性别</span>孩的一句话</p>
+			<p class="word font2" id="obj_content">
+				一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话一句话啊一句话
+			</p>
+		</div>
+
+		<div class="btn_box dark">
+			<a class="btn btn1" onclick="goToget('{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}')"><!-- to toget_s&&&& to toget_i -->
+				<span class="btn_word font2">继续捡：）</span>
+			</a>
+			<p class="word font2">继续捡，有可能捡到异性的邀约或心愿哟</p>
+		</div>
+
+		<div class="buttom">
+			<div class="logo_box"><img class="logo" src="{% static 'fbe/images/logo.png' %}"></div>
+			<!-- <a class="inform_btn" onclick="openInformTip()">
+				<img class="inform_sign" src="{% static 'fbe/images/inform_sign.png' %}">
+				<span>举报</span>
+			</a> -->
+		</div>
+
+		<!-- <img class="tip inform tip_b" src="{% static 'fbe/images/tip_b_toget.png' %}">
+		<div class="tip inform">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<a class="close" onclick="closeTip()"><img src="{% static 'fbe/images/close.png' %}"></a>
+			<h1 class="word">
+				填写举报原因
+			</h1>
+			<form class="reason form" id="theform" method="post" action="">
+				<div class="select">
+					<select name="reason">
+						<option value="1">含有违法内容</option>
+						<option value="2">含有不健康内容</option>
+						<option value="3">含有欺诈内容</option>
+						<option value="4">无意义内容</option>
+						<option value="5">其它</option>
+					</select>
+				</div>
+				<p class="word">
+					如发现漂流瓶存在问题我们会尽快处理！谢谢您的配合！
+				</p>
+				<label class="btn btn1" for="submitbtn" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
+					<span class="btn_word">举报</span>
+				</label>
+				<input class="formbtn submit" id="submitbtn" type="submit" value="提交">
+				<a class="link" onclick="closeTip()">不举报，返回</a>
+			</form> -->
+			
+		</div>
+	</div>
+
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+		$(document).ready(loadInfo(0,"{%url 'picked' %}"));/*写发送请求到的url*/
+	</script>
+</body>
+
+</html>

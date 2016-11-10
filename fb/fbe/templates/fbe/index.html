@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<!--响应式页面对手机设备的缩放设置
+		这样设置以后手机竖屏宽度大概在310px至360px之间
+		maximum-scale(最大尺寸), minimum-scale(最小尺寸), user-scalable(是否允许缩放) 可根据需要更改
+		-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>小线漂流瓶</title>
+	<link rel="stylesheet" href="{% static 'fbe/styles/index.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<img class="bg index" src="{% static 'fbe/images/index_bg.png' %}">
+	<div class="container">
+		<img class="header_img" src="{% static 'fbe/images/index_header.png' %}">
+		<div class="btn_box">
+			<a class="btn btn1" onclick="{%if sex %}goToget('{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}'){%else%}openSexTip(){%endif%}" onmouseover="changeIndexTipBtn($(this))" onmouseout="backIndexTipBtn($(this))"><!-- 可能要判断第一次什么的，反正现在不用，如果要的话，就做判断，第一次就开标签，不是第一次就调用随机函数 -->
+				<img class="btn_deco l" src="{% static 'fbe/images/deco1.png' %}">
+				<span class="btn_word font2">捡瓶子</span>
+				<img class="btn_deco r" src="{% static 'fbe/images/deco1.png' %}">
+			</a>
+			<a class="btn btn2" href="{%url '_throw' %}" onmouseover="changeIndexBottleBtn($(this))" onmouseout="backIndexBottleBtn($(this))"><!-- to tothrow -->
+				<img class="btn_deco l" src="{% static 'fbe/images/deco2_l.png' %}">
+				<span class="btn_word font2">扔瓶子</span>
+				<img class="btn_deco r" src="{% static 'fbe/images/deco2_r.png' %}">
+			</a>
+		</div>
+		<a class="a_back font2" href=""><!-- to other page -->
+			<   返回主菜单
+		</a>
+
+		<img class="tip sex_tip tip_b" src="{% static 'fbe/images/tip_b.png' %}">
+		<form class="tip form sex_tip" id="theform" method="post" action="" >{% csrf_token %}<!-- -->
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<a class="close" onclick="closeTip()"><img src="{% static 'fbe/images/close.png' %}"></a>
+			<h1 class="word font1">先确认一下自己的性别吧：</h1>
+			<div class="sex_box">
+				<label class="btn_sex sex1" for="man" onclick="checkRadio($(this))">
+					<img class="img_sex opt_pic" src="images/btn_sex1.png %}">
+					<img class="img_sex opt_pic opt_h" src="{% static 'fbe/images/btn_sex1_h.png' %}">
+					<p class="text_sex font2">男</p>
+				</label>
+				<label class="btn_sex sex2" for="none" onclick="checkRadio($(this))">
+					<img class="img_sex opt_pic" src="{% static 'fbe/images/btn_sex2.png' %}">
+					<img class="img_sex opt_pic opt_h" src="{% static 'fbe/images/btn_sex2_h.png' %}">
+					<p class="text_sex font2">不愿意告诉你</p>
+				</label>
+				<label class="btn_sex sex3" for="woman" onclick="checkRadio($(this))">
+					<img class="img_sex opt_pic" src="{% static 'fbe/images/btn_sex3.png' %}">
+					<img class="img_sex opt_pic opt_h" src="{% static 'fbe/images/btn_sex3_h.png' %}">
+					<p class="text_sex font2">女</p>
+				</label>
+				<input type="radio" name="s_sex" value="0" id="man">
+				<input type="radio" name="s_sex" value="1" id="none">
+				<input type="radio" name="s_sex" value="2" id="woman">
+			</div>	
+
+			<p class="word font2">
+				提示：只能选择一次不能更改哟~<br>
+				有较大可能捡到异性瓶子
+			</p>
+
+			<label class="btn btn1" for="submitbtn" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))">
+				<img class="btn_deco l" src="{% static 'fbe/images/deco1b.png' %}">
+				<span class="btn_word font2">捡瓶子</span>
+				<img class="btn_deco r" src="{% static 'fbe/images/deco1b.png' %}">
+			</label>
+			<p class="word alert font2">请填写性别哦</p>
+			<input class="formbtn submit" id="submitbtn" type="button" value="提交" onclick="checkSex('{%url 'pick' %}','{%url 'toget' rd='0' %}','{%url 'toget' rd='1' %}')"><!-- to toget_s&&&& to toget_i -->
+		</form>
+	</div>
+
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+	</script>
+</body>
+
+</html>

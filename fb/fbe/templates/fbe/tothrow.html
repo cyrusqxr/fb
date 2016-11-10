@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>小线漂流瓶_扔瓶子</title>
+	<link rel="stylesheet" href="{% static 'fbe/styles/index.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fbe/styles/tothrow.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<img class="bg" src="{% static 'fbe/images/tothrow_bg.png' %}">
+	<div class="container">
+		<div class="top">
+			<a class="close" href="{%url 'index' %}"><img src="{% static 'fbe/images/close2.png' %}"></a>
+			<img class="top_deco" src="{% static 'fbe/images/deco3.png' %}">
+		</div>
+
+		<form class="content" id="theform" method="post" action="">
+			<div class="fix">	
+				<div class="quest first">
+					<p class="font1">一句话or邀约</p>
+					<div class="option_box two font2">
+						<label class="option" for="sentence" onclick="checkRadio($(this));changeUnfix(0)">
+							<img class="opt_pic checked" src="{% static 'fbe/images/q1o1.png' %}">
+							<img class="opt_pic opt_h checked" src="{% static 'fbe/images/q1o1_h.png' %}">
+							<p class="checked">一句话</p>
+						</label>
+						<label class="option" for="invite" onclick="checkRadio($(this));changeUnfix(1)">
+							<img class="opt_pic" src="{% static 'fbe/images/q1o2.png' %}">
+							<img class="opt_pic opt_h" src="{% static 'fbe/images/q1o2_h.png' %}">
+							<p>邀约</p>
+						</label>
+						<input class="hidden" type="radio" name="type" value="0" id="sentence" checked>
+						<input class="hidden" type="radio" name="type" value="1" id="invite">
+					</div>	
+				</div>
+				<div class="quest">
+					<p class="font1">你的性别（请如实填写哦）</p>
+					<div class="option_box two font2">
+						<label class="option" for="man" onclick="checkRadio($(this))">
+							<img class="opt_pic" src="{% static 'fbe/images/q2o1.png' %}">
+							<img class="opt_pic opt_h" src="{% static 'fbe/images/q2o1_h.png' %}">
+							<p>男</p>
+						</label>
+						<label class="option" for="woman" onclick="checkRadio($(this))">
+							<img class="opt_pic" src="{% static 'fbe/images/q2o2.png' %}">
+							<img class="opt_pic opt_h" src="{% static 'fbe/images/q2o2_h.png' %}">
+							<p>女</p>
+						</label>
+						<input class="hidden" type="radio" name="o_sex" value="0" id="man">
+						<input class="hidden" type="radio" name="o_sex" value="1" id="woman">
+					</div>
+				</div>
+				<div class="quest">
+					<p class="font1">你希望谁收到你的漂流瓶呢？</p>
+					<div class="option_box three font2">
+						<label class="option" for="hete" onclick="checkRadio($(this))">
+							<img class="opt_pic" src="{% static 'fbe/images/q3o1.png' %}">
+							<img class="opt_pic opt_h" src="{% static 'fbe/images/q3o1_h.png' %}">
+							<p>异性较多</p>
+						</label>
+						<label class="option" for="homo" onclick="checkRadio($(this))">
+							<img class="opt_pic" src="{% static 'fbe/images/q3o2.png' %}">
+							<img class="opt_pic opt_h" src="{% static 'fbe/images/q3o2_h.png' %}">
+							<p>同性较多</p>
+						</label>
+						<label class="option" for="random" onclick="checkRadio($(this))">
+							<img class="opt_pic" src="{% static 'fbe/images/q3o3.png' %}">
+							<img class="opt_pic opt_h" src="{% static 'fbe/images/q3o3_h.png' %}">
+							<p>随意就好</p>
+						</label>
+						<input class="hidden" type="radio" name="target" value="0" id="hete">
+						<input class="hidden" type="radio" name="target" value="1" id="homo">
+						<input class="hidden" type="radio" name="target" value="2" id="random">
+					</div>
+				</div>
+			</div>
+
+			<div class="unfix sentence">
+				<div class="quest">
+					<p class="font1">写上你的一句话吧：</p>
+					<textarea class="font2" name="type0">哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔</textarea>
+				</div>
+			</div>
+
+			<div class="unfix invite">
+				<div class="quest">
+					<p class="font1">邀请人家就留一下自己的邮箱吧</p>
+					<div class="address">
+						<img class="icon" src="{% static 'fbe/images/b_q4.png' %}">
+						<input class="email_input font2" type="text" name="type1_email">
+						<p class="info font2">
+							邮箱仅确认赴约的朋友可见<br>
+							有人赴约时你将通过提醒与对方邮件联系
+						</p>
+					</div>
+				</div>
+				<div class="quest">
+					<p class="font1">写上你的邀约（可以附上一个独特的接头暗号哦）：</p>
+					<textarea class="font2" name="type1">哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔哇咔咔咔</textarea>
+				</div>
+			</div>
+
+			<div class="btn_box dark">
+				<label class="btn" for="submitbtn" onmouseover="changeDarkBottleBtn($(this))" onmouseout="backDarkBottleBtn($(this))">
+					<img class="btn_deco l" src="{% static 'fbe/images/deco2b_l.png' %}">
+					<span class="btn_word font2">扔出去！</span>
+					<img class="btn_deco r" src="{% static 'fbe/images/deco2b_r.png' %}">
+				</label>
+				<input class="formbtn submit hidden" id="submitbtn" type="button" value="提交" onclick="checkThrow('{%url 'Throw' %}')">
+			</div>
+		</form>
+
+		<div class="buttom throw">
+			<div class="logo_box"><img class="logo" src="{% static 'fbe/images/logo.png' %}"></div>
+		</div>
+
+		<img class="tip before success fail tip_b" src="{% static 'fbe/images/tip_b_tothrow.png' %}">
+		<div class="tip before">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<h1 class="word font1">
+				本功能仅供娱乐，请不要轻信网友，不要单独在人少的地点见面，切忌涉及财产的交谈，提高自我保护意识！
+			</h1>
+			<div class="btn_box dark" onclick="closeTip()">
+				<a class="btn btn1">
+					<span class="btn_word font2">确认</span>
+				</a>
+			</div>
+		</div>
+		<div class="tip fail">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<h1 class="word font1">
+				你的信息不完善哦，请回去填写完整吧！
+			</h1>
+			<div class="btn_box dark" onclick="closeTip()">
+				<a class="btn btn1">
+					<span class="btn_word font2">返回</span>
+				</a>
+			</div>
+		</div>
+		<div class="tip success B">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<h1 class="word font1">
+				反馈成功框框
+			</h1>
+			<div class="btn_box dark">
+				<a class="btn btn1" href="{%url 'index' %}"><!-- to index -->
+					<span class="btn_word font2">确认</span>
+				</a>
+			</div>
+		</div>
+		<div class="tip success A">
+			<img class="bg" src="{% static 'fbe/images/tip_bg.png' %}">
+			<h1 class="word font1">
+				邀约已扔出去，静候佳音吧~<br>
+				有赴约信息我们会将通知发至你的预留邮箱
+			</h1>
+			<p class="email_address font2">12345678@123.com</p>
+			<p class="word font1">请与ta通过邮箱联系~</p>
+			<div class="btn_box dark">
+				<a class="btn btn1" href="{%url 'index' %}"><!-- to index -->
+					<span class="btn_word font2">好</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+	</script>
+</body>
+
+</html>

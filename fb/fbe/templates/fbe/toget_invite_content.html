@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<!--优先使用webkit内核，或使用IE最高版本-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>小线漂流瓶_赴约暗号</title>
+	<link rel="stylesheet" href="{% static 'fbe/styles/index.css' %}">
+	<link rel="stylesheet" href="{% static 'fbe/styles/toget.css' %}">
+	<style>
+		/*标签*/
+	</style>
+	<script src="{% static 'fbe/scripts/jquery-1.11.3.min.js' %}"></script><!--一些 js 库,注意依赖顺序-->
+	<script>
+		//少部分本页面的js
+	</script>
+</head>
+
+<body>
+	<img class="bg" src="{% static 'fbe/images/toget_bg.png' %}">
+	<div class="container">
+		<div class="top">
+			<img class="top_deco" src="{% static 'fbe/images/deco3.png' %}">
+		</div>
+
+		<div class="content invite_content">
+			<p class="title font1">ta已经知道你答应ta的邀请啦~</p>
+			<div class="email font1">
+				<p class="headline">ta的邮箱请收好：</p>
+				<p class="information font2" id="obj_email">12345678@123.com</p>
+			</div>
+			<div class="invite_content">
+				<p class="headline font1">你们约定的内容是：</p>
+				<p class="information font2" id="obj_content">
+					哈哈哈哈哈哈哈哈哈
+				</p>
+			</div>
+			<div class="cipher">
+				<p class="headline font1">给你们推荐的接头暗号是：</p>
+				<div class="information font2">
+					<p id="cipher">
+						ta：土豆土豆土豆土豆土豆土豆<br>
+						你：冬瓜冬瓜冬瓜冬瓜冬瓜冬瓜
+					</p>
+				</div>
+			</div>	
+		</div>
+		<p class="content_alarm font2">
+			本功能仅供娱乐，请不要轻信网友，<br>
+			不要单独在人少的地点见面，<br>
+			切忌涉及财产的交谈，提高自保护意识！
+		</p>
+		<div class="btn_box dark">
+			<a class="btn btn1 long" href="{%url 'index' %}" onmouseover="changeDarkTipBtn($(this))" onmouseout="backDarkTipBtn($(this))"><!-- to index -->
+				<img class="btn_deco l long" src="{% static 'fbe/images/deco1b.png' %}">
+				<span class="btn_word font2">我已妥善保存以上信息</span>
+				<img class="btn_deco r long" src="{% static 'fbe/images/deco1b.png' %}">
+			</a>
+		</div>
+
+		<div class="buttom invite_content">
+			<div class="logo_box"><img class="logo" src="{% static 'fbe/images/logo.png' %}"></div>
+		</div>
+	</div>
+
+
+
+	<script src="{% static 'fbe/scripts/index.js' %}"></script>
+	<script>
+		//大部分本页面的 js
+		$(document).ready(loadInfo(2,"{%url 'return_email' %}"));/*写发送请求到的url*/
+	</script>
+</body>
+
+</html>

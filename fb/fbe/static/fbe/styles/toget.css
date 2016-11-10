@@ -1,0 +1,157 @@
+@charset "utf-8";
+.content {
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 80px;
+}
+.content.invite_content {
+	width: 72%;
+}
+.content .title {
+	font-size: 2em;
+	color: #08423a;
+}
+.content .word {
+	font-size: 1.6em;
+	color: #08423a;
+	min-height: 297px;
+	margin-top: 60px;
+}
+.content .word.invite {
+	min-height: 264px;
+}
+
+.buttom.invite {
+	padding-top: 20px;
+}
+.buttom.invite_content {
+	padding-top: 40px;
+}
+
+.buttom .inform_btn {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+.buttom .inform_btn {
+	font-size: 1.6em;
+	color: #08423a;
+}
+.buttom .inform_sign {
+	width: 13px;
+	height: 13px;
+}
+
+.tip.inform {
+	visibility: hidden;
+}
+.tip.inform .select {
+	padding-top: 20px;
+	width: 195px;
+	min-height: 110px;
+	margin: 0 auto;
+}
+.tip.inform select {
+	width: 195px;
+	height: 17.5px;
+	border: 1px #08423a solid;
+	color: #08423a;
+	background-color: transparent;
+}
+.tip.inform option {
+	width: 195px;
+	height: 17.5px;
+	color: #08423a;
+	background-color: transparent;
+}
+.tip.inform form .word {
+	margin: 0 55px;
+}
+.tip.inform .btn {
+	margin-top: 20px;
+}
+.tip.inform .link {
+	display: block;
+	font-size: 1.6em;
+	text-decoration: none;
+	color: #08423a;
+	text-align: center;
+	padding-top: 15px;
+}
+.tip.inform .link:hover {
+	color: #04cbc5;
+}
+
+.tip.email .address {
+	text-align: center;
+	padding-top: 30px;
+}
+.tip.email .address .icon {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 5px;
+}
+.tip.email .address .email_input {
+	width: 200px;
+	height: 26px;
+	display: inline-block;
+	border-bottom: 1px #f599c2 solid;
+	background-color: transparent;
+	font-size: 1.8em;
+	color: #f599c2;
+}
+.tip.email .address .words p.word {
+	text-align: left;
+}
+.tip.email .link {
+	display: block;
+	font-size: 1.6em;
+	text-decoration: none;
+	color: #08423a;
+	text-align: center;
+	padding-top: 5px;
+}
+.tip.email .link:hover {
+	color: #04cbc5;
+}
+
+.tip.fail .word {
+	font-size: 2em;
+	padding: 30px 25px;
+	text-align: center;
+	min-height: 100px;
+}
+.tip.fail {
+	z-index: 99;
+}
+
+/*invite_content*/
+.content.invite_content {
+	min-height: 370px;
+}
+.content .headline {
+	font-size: 2em;
+	color: #08423a;
+	padding: 10px 0;
+}
+.content .information {
+	text-align: center;
+	padding: 5px 0;
+	font-size: 1.6em;
+	color: #08423a;
+}
+.content_alarm {
+	width: 60%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+.btn.long {
+	width: 220px;
+}
+.btn .btn_deco.l.long {
+	left: 4px;
+}
+.btn .btn_deco.r.long {
+	right: 4px;
+}

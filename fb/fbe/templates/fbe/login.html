@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>报名预览登陆页</title>
+    <style type="text/css">   
+        .center-in-center{   
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);   
+        }   
+    </style>   
+</head>   
+<body>   
+    <div class="center-in-center">
+	<form action="/fbe/login/" method="POST">
+	{% csrf_token %}
+			<h1>请输入口令:</h1><input type="password" name="password">
+			<input type="submit" value="登陆" name="submit">
+			{{tip}}
+	</form>
+	</div>   
+</body>   
+</html>
